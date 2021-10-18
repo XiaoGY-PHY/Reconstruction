@@ -1,0 +1,33 @@
+//############################################################## -*-C++-*-
+//
+// Boss job options file for MdcRec
+//
+//==============================================================
+#include "$RAWDATAPROVIDERSVCROOT/share/jobOptions_RawDataProviderSvc.txt"
+#include "$MDCCALIBFUNSVCROOT/share/job_MdcCalibFunSvc.txt"
+
+//--------------------------------------------------------------
+// Private Application Configuration options
+//--------------------------------------------------------------
+ApplicationMgr.DLLs += { "BesTimerSvc" };
+ApplicationMgr.DLLs += { "MdcTrkRecon" };
+ApplicationMgr.DLLs += { "RootHistCnv" };
+ApplicationMgr.TopAlg += { "MdcMakeHits","MdcTrkRecon/MdcTrkRecon_Est" };
+ApplicationMgr.ExtSvc += { "MdcGeomSvc" };
+ApplicationMgr.ExtSvc += { "BesTimerSvc" };
+
+//--------------------------------------------------------------
+// MdcTrkRecon Private Options
+//--------------------------------------------------------------
+//MdcMakeHits.resLayer=-1;//id of layer
+//MdcTrkRecon.resLayer=-1;//id of layer
+MdcTrkRecon_Est.paramFile="$MDCTRKRECONROOT/share/params";
+MdcTrkRecon_Est.pdtFile ="$MDCTRKRECONROOT/share/pdt.table";
+MdcTrkRecon_Est.recForEsTime = true;
+MdcTrkRecon_Est.tryBunch = true;
+
+//==============================================================
+//
+// End of job options file
+//
+//##############################################################

@@ -1,0 +1,47 @@
+package MdcTrkRecon
+
+author Zhang Yao <yzhang@hepg.sdu.edu.cn>
+
+use BesPolicy BesPolicy-*
+use GaudiInterface GaudiInterface-* External
+use MdcRawEvent  	MdcRawEvent-* Mdc
+use MdcRecEvent  	MdcRecEvent-* Mdc
+use EventModel   	EventModel-*  Event 
+use McTruth      	McTruth-*     Event
+use BesCLHEP 	 	BesCLHEP-*    External
+use BesBoost	 	BesBoost-*    External
+use BesAIDA      	BesAIDA-*     External 
+use MdcData      	MdcData-*     Reconstruction/MdcPatRec
+use MdcGeom      	MdcGeom-*     Reconstruction/MdcPatRec
+use BField       	BField-*      Reconstruction/MdcPatRec     
+use TrkFitter    	TrkFitter-*   Reconstruction/MdcPatRec
+use MdcCalibFunSvc      MdcCalibFunSvc-*	Mdc 
+use MagneticField	MagneticField-*
+
+use RootHistCnv v* 
+use EvTimeEvent	EvTimeEvent-* Event
+use ReconEvent		ReconEvent-*  Event 
+use RawDataProviderSvc  RawDataProviderSvc-*    Event
+use MdcPrintSvc   	MdcPrintSvc-* Mdc/MdcCheckUtil
+
+#for time test
+#use tau 		tau-00-00-01 	External
+#use pdtoolkit 		pdtoolkit-* 	External
+#use BesTimerSvc BesTimerSvc-* Utilities
+
+include_dirs "$(MDCTRKRECONROOT)"
+#apply_pattern declare_runtime files=" params pdt.table "
+
+apply_pattern dual_use_library files=*.cxx
+#application TT ../test/*.cxx
+
+macro_append MdcTrkRecon_cppflags " -DDEBUG_CURL_DUMP"
+#macro_append MdcTrkRecon_cppflags " -DMDCPATREC_DEBUG "
+#macro_append MdcTrkRecon_cppflags " -DMDCPATREC_WARNING "
+#macro_append MdcTrkRecon_cppflags " -DMDCPATREC_ERROR "
+#macro_append MdcTrkRecon_cppflags " -DMDCPATREC_TIMETEST"
+#macro_append MdcTrkRecon_cppflags " -DMDCPATREC_RESLAYER"
+
+macro_append MdcTrkRecon_cppflags " -DMDCPATREC_FATAL "
+
+apply_pattern use_CLHEP_AListAndString

@@ -1,0 +1,165 @@
+2017-08-11 Zhang Yao <zhangyao@ihep.ac.cn>, Zhang Jin <zhangjin@ihep.ac.cn>
+	* fix bug in MdcTrackListBase::arbitrateHits()
+
+2016-10-18 Zhang Yao <zhangyao@ihep.ac.cn>
+	* add no inner case, to improve effieciency cos(theta)> 0.93
+
+2012-10-18 Zhang Yao <zhangyao@ihep.ac.cn>
+	* fix a memory leakage bug in MdcSegFinder
+
+2012-10-13 Zhang Yao <zhangyao@ihep.ac.cn>
+	* add bestTialSeg for MdcSegFinder
+	* update MdcTrackList::pickHits()
+	* use params_121009 change pickHits cuts
+
+2012-08-13 Zhang Yao <zhangyao@ihep.ac.cn>
+	* add span.slope +-pi cut in MdcSegFinder
+
+2012-07-19 Zhang Yao <zhangyao@ihep.ac.cn>
+	* fix a bug of doca sign in MdcTrack storeTDS
+
+2012-07-17 Zhang Yao <zhangyao@ihep.ac.cn>
+	* fix a bug in MdcTrack fltLen
+
+2012-04-25 Zhang Yao <zhangyao@ihep.ac.cn>
+	* fix bug in MdcSegInfoSterO::zPosition()
+
+2011-12-21 Zhang Yao <zhangyao@ihep.ac.cn>
+	* fix cosmic cpa=0 problem
+
+2011-09-26 Zhang Yao <zhangyao@ihep.ac.cn>
+	* fix bugs in segment finder and segment linking
+	* add hit fitting in 3d candidate track param fit
+	* poison hits for continus fired hits
+	* change vertex cut from 2,10 to 1,10 cm
+	* optimize parameter use params_110729_segChi2_70
+
+2011-08-03 Zhang Yao <zhangyao@ihep.ac.cn>
+	* change share/jobOptions_MdcTrkRecon.txt for imporved vertex as 660a
+
+2010-09-26 Zhang Yao <zhangyao@ihep.ac.cn>
+	* add pickUitlLastLayer, nHitDeleted in MdcTrackParam
+	* MdcTrackList pickHits() to get hits till layer 42
+	* nHitDeleted not used
+	* change MdcTrkRecon.helixHitsSigma layer3,4 from 5 to 10 sigma
+	* MdcTrack store(), save setChisqAdd to TDS
+	* change job options file, use param_100925 setup
+
+2010-07-19 Zhang Yao <zhangyao@ihep.ac.cn>
+	* update pick hits fraction in arbitrate hits
+
+2010-03-16 Zhang Yao <zhangyao@ihep.ac.cn>
+	* move new Geom to beginRun
+
+2009-12-16 Zhang Yao <zhangyao@ihep.ac.cn>
+	* upgrade of tracking efficiency
+
+2009-09-16 Zhang Yao <zhangyao@ihep.ac.cn>
+	* change wire endcap name
+
+2009-06-24 Zhang Yao <zhangyao@ihep.ac.cn>
+	* use new MdcRawProvider interface
+
+2009-05-31 Zhang Yao <zhangyao@ihep.ac.cn>
+	* add a control for sag correction
+
+2009-03-20 Zhang Yao<zhangyao@ihep.ac.cn>
+	* set adc channel to TDS instead of charge
+
+2009-03-02 Zhang Yao<zhangyao@ihep.ac.cn>
+	* rename jobOption file from MdcPatRec to MdcTrkRecon
+
+2008-12-15 Zhang Yao<zhangyao@ihep.ac.cn>
+	* fix flag for cosmic rec
+
+2008-12-08 Zhang Yao<zhangyao@ihep.ac.cn>
+	* add jobOptions for data
+
+2008-09-23 Zhang Yao<zhangyao@ihep.ac.cn>
+	* get BField from Field Svc
+
+2008-05-17 Zhang Yao<zhangyao@ihep.ac.cn>
+	* add fill tuple in MdcSegGrouperAx
+
+2008-04-22 Zhang Yao<zhangyao@ihep.ac.cn>
+	* fix no rec data in RecEsTimeCol
+
+2008-04-14 Zhang Yao<zhangyao@ihep.ac.cn>
+	* change z field to -1.
+
+
+2008-04-01 Zhang Yao <zhangyao@ihep.ac.cn>
+	* change DchTrack to MdcTrack
+	* move storeTrack to MdcTrack
+	* add MdcTrack(TrkRecoTrk* ) constructor
+	* read MdcDigi form RawDataProviderSvc
+
+2007-01-19 Zhang Yao <zhangyao@ihep.ac.cn>
+	* add try bunches flag
+
+2007-01-12 Zhang Yao <zhangyao@ihep.ac.cn>
+	* try bunches if t0 not found
+	* add two jobOption file for reconstruction twice
+	* add control parameter of n bunch
+
+2006-11-30 Zhang Yao <zhangyao@ihep.ac.cn>
+	* fix memory leak in MdcTrackListBase::store() and TrkContexEv
+
+2006-11-24 Zhang Yao <zhangyao@ihep.ac.cn>
+	* clearSubTree before unregisterObject
+
+2006-10-23 Zhang Yao <zhangyao@ihep.ac.cn>
+	* test chisq>0. in MdcSegGrouper::combineSegs()
+
+2006-09-27 Zhang Yao <zhangyao@ihep.ac.cn>
+	* get t0 form EsTimeAlg
+
+2006-07-11 Zhang Yao <zhangyao@ihep.ac.cn>
+	* use MdcCalibFunSvc 
+	* open TIMETEST in requirements to use Time Test Code
+	* add histogram and ntuples
+
+2006-03-27 Zhang Yao <zhangyao@ihep.ac.cn>
+        * fix phi terminal calc. the domain of fiterm is [-2*pi,2*pi]
+
+2006-03-19 Zhang Yao <zhangyao@ihep.ac.cn>
+        * fix phi terminal calc.
+
+2006-03-14 Zhang Yao <zhangyao@ihep.ac.cn>
+        * setAdc delete 1e-6
+        * delete active flag, put active hit to TDS only 
+
+2006-01-13 Zhang Yao <zhangyao@ihep.ac.cn>
+        * driftDistL and dirftDistR put same value different sign
+        * add a flag of status of the NHit and NStereo in MdcRecHit
+        * add property MdcTrkRecon.allHit  =1,NHit and NStereo include all Hit (act,inact)
+        * =0 NHit and NStereo only include active hit
+
+2005-12-31 Zhang Yao <zhangyao@ihep.ac.cn>
+        * use szPozition in MdcSegInfoStero
+        * use max fltLen calc. fiTerm in MdcTrackListBase
+
+2005-12-01 Zhang Yao <zhangyao@ihep.ac.cn>
+        * put rawTime to TDS 
+        * MdcRecHit status=0, hit is not active
+
+2005-12-01 Zhang Yao <zhangyao@ihep.ac.cn>          
+        * driftTime = rawTime - tof , tof calc. in recon.
+
+2005-11-14 Zhang Yao <zhangyao@ihep.ac.cn>          
+        * MdcSegInfoSterO chage calculation of z of hits in segment 
+        * fix fi0 filled in TDS
+
+2005-11-08 Zhang Yao <zhangyao@ihep.ac.cn>          
+        * MdcTrack have a SmartRef of MdcRecHit
+        * remove mass of track
+
+2005-11-07 Zhang Yao <zhangyao@ihep.ac.cn>          
+        * add fiTrem of track and Z of hit
+        * recHit id sort for one event(temp)
+
+2005-08-08 Ma Qiumei <maqm@ihep.ac.cn>
+        * fix a bug for reconstruction-together
+
+2005-08-02 Ma Qiumei <maqm@ihep.ac.cn>
+        * modify cmt/requirements and jobOptions for Reconstruction_together

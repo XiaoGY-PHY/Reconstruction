@@ -1,0 +1,19 @@
+#include "$MDCTRKRECONROOT/share/jobOptions_MdcTrkRecon.txt" 
+//MdcTrkRecon.hist=1;
+//MdcTrkRecon.debug=2;
+MdcTrkRecon.paramFile="params_v0";
+MdcTrkRecon.keepBadTdc = true;
+MdcMakeHits.keepBadTdc = true;
+MdcTrkRecon.helixHitsSigma = {
+  10.,5.,5.,5.,// 0,1,2,3
+  5.,5.,5.,10.,// 4,5,6,7
+  10.,5.,5.,5.,// 8,9,10,11
+  5.,5.,5.,5.,// 12,13,14,15
+  5.,5.,5.,10.,// 16,17,18,19
+  10.,5.,5.,5.,// 20,21,22,23
+  5.,5.,5.,5.,// 24,25,26,27
+  5.,5.,5.,5.,// 28,29,30,31
+  5.,5.,5.,10.,// 32,33,34,35
+  10.,5.,5.,5.,// 36,37,38,39
+  5.,5.,10.     // 40,41,42
+}; 

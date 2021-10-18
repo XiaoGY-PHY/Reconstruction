@@ -1,0 +1,28 @@
+//############################################################## -*-C++-*-
+//
+// Boss job options file for MdcPatRec navigaion
+//
+//==============================================================
+
+ApplicationMgr.DLLs += { "EventNavigator" };
+ApplicationMgr.DLLs += { "MdcNavigation" };
+ApplicationMgr.ExtSvc += { "MdcGeomSvc" };
+ApplicationMgr.TopAlg += { "BesNavigatorInit","MdcNavigation"};
+
+BesNavigatorInit.OutputLevel = 5;
+BesNavigatorInit.FillMdcInfo = true;
+BesNavigatorInit.FillEmcInfo = true;
+BesNavigatorInit.FillTofInfo = true;
+BesNavigatorInit.FillMucInfo = true;
+
+//
+// cuts for good muon selection
+//
+//MdcNavigation.RxyCut = 1.0;
+//MdcNavigation.Vz0Cut = 5.0;
+//MdcNavigation.CosThetaCut = 0.93;
+//==============================================================
+//
+// End of job options file
+//
+//##############################################################

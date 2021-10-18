@@ -1,0 +1,32 @@
+//############################################################## -*-C++-*-
+//
+// Boss job options file for MdcRec
+//
+//==============================================================
+#include "$RAWDATAPROVIDERSVCROOT/share/jobOptions_RawDataProviderSvc.txt"
+#include "$MDCCALIBFUNSVCROOT/share/job_MdcCalibFunSvc.txt"
+
+//--------------------------------------------------------------
+// Private Application Configuration options
+//--------------------------------------------------------------
+ApplicationMgr.DLLs += { "BesTimerSvc" };
+ApplicationMgr.DLLs += { "MdcTrkRecon" };
+ApplicationMgr.DLLs += { "RootHistCnv" };
+ApplicationMgr.TopAlg += { "MdcMakeHits","MdcTrkRecon/MdcTrkRecon_Rec" };
+ApplicationMgr.ExtSvc += { "MdcGeomSvc" };
+ApplicationMgr.ExtSvc += { "BesTimerSvc" };
+
+//--------------------------------------------------------------
+// MdcTrkRecon Private Options
+//--------------------------------------------------------------
+MdcTrkRecon_Rec.paramFile="$MDCTRKRECONROOT/share/params";
+MdcTrkRecon_Rec.pdtFile ="$MDCTRKRECONROOT/share/pdt.table";
+MdcTrkRecon_Rec.recForEsTime = false;
+MdcTrkRecon_Rec.tryBunch= false;
+MdcMakeHits.countPropTime = true;
+
+//==============================================================
+//
+// End of job options file
+//
+//##############################################################
